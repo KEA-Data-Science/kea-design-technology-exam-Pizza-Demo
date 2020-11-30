@@ -14,8 +14,11 @@
     float:right;
 }
 .table-striped{
-    width: 90%;
+    width: 85%;
 }
 .font-weight-bolder{
     width:40%;
+}
+.table td, .table th{
+    border-top:none;
 }
