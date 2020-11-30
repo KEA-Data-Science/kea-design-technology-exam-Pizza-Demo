@@ -23,17 +23,13 @@ public class DishCRUDController {
     }
 
     @GetMapping("/new-dish")
-    public String createDish(@ModelAttribute("dish") Dish dish,
-                             Errors errors,
-                             Model model) {
+    public String createDish(Model model, Dish dish) {
 
         return "/crud/new-dish";
     }
 
     @PostMapping("/save-dish")
-    public String saveDish(@Valid @ModelAttribute("dish") Dish dish,
-                           Errors errors,
-                           Model model) {
+    public String saveDish(@Valid @ModelAttribute("dish") Dish dish, Errors errors) {
         if (errors.hasErrors()) {
             return "/crud/new-dish";
         } else {
