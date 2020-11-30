@@ -23,6 +23,9 @@ public class Dish {
     @Size(min = 3, max = 45,message = "Beskrivelsen af retten kan være 3-45 tegn lang.")
     private String description;
 
+    @Size(min = 2, max = 150, message = "Topping-listen skal være mellem 2 og 150 karakterer lang.")
+    private String toppings;
+
     @Size(min = 1, max = 15, message = "Beskrivelsen af typen kan være 2-15 tegn lang.")
     private String type;
 
