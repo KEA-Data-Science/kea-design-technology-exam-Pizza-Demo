@@ -4,8 +4,14 @@
 .container-fluid div:nth-child(odd){
     background-color: lavender;
 }
+.numbers{
+    float:right;
+    align-content: end;
+}
 .pris{
     align-content: end;
+    width:100%;
+    float:right;
 }
 .table-striped{
     width: 90%;

@@ -27,12 +27,9 @@
                             <tr>
                                 <td class="font-weight-bolder font-italic" th:text="${dish.getDescription()}"></td>
                                 <td th:text="'&#127829; ' + ${dish.getType()}"></td>
-                                <th th:text="${dish.getId()}"></th>
+                                <th class="numbers" th:text="${dish.getId()}"></th>
                             </tr>
                             <tr class="pris">
-                                <td></td>
-<!--                                <td class="font-weight-bold">Pris:</td>-->
-                                <td></td>
                                 <th th:text="'Pris: '+${dish.getPrice()}"></th>
                             </tr>
                         </table>
