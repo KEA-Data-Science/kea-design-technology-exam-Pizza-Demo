@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
 
@@ -16,28 +17,28 @@
     <div th:if="${#fields.hasAnyErrors()}">
         <p style="color: darkred" th:each="err : ${#fields.allErrors()}" th:text="${err}">...</p>
     </div>
-        <table>
-            <tr>
-                <th>Rettens Navn</th>
-                <td><input type="text" name="description" th:field="*{description}"></td>
-            </tr>
-            <tr>
-                <th>Toppings</th>
-                <td><input type="text" name="toppings" th:field="*{toppings}"></td>
-            </tr>
-            <tr>
-                <th>Skriv Rettens Type</th>
-                <td><input type="text" name="type" th:field="*{type}"></td>
-            </tr>
-            <tr>
-                <th>Rettens Pris</th>
-                <td><input type="number" name="price" th:field="*{price}"></td>
+        <div>
+            <div>
+                <div>Rettens Navn</div>
+                <div><input type="text" name="description" th:field="*{description}"></div>
+            </div>
+            <div>
+                <div>Toppings</div>
+                <div><input type="text" name="toppings" th:field="*{toppings}"></div>
+            </div>
+            <div>
+                <div>Skriv Rettens Type</div>
+                <div><input type="text" name="type" th:field="*{type}"></div>
+            </div>
+            <div>
+                <div>Rettens Pris</div>
+                <div><input type="number" name="price" th:field="*{price}"></div>
 
-            </tr>
-            <tr>
-                <th><input type="submit"></th>
-            </tr>
-        </table>
+            </div>
+            <div>
+                <div><input type="submit"></div>
+            </div>
+        </div>
 
 </form>
 </body>

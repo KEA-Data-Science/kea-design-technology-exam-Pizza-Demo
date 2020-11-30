@@ -14,7 +14,7 @@ import org.springframework.validation.Errors;
 import javax.validation.Valid;
 
 @Controller
-@SessionAttributes({"dish"})
+
 public class DishCRUDController {
     DishCrudRepository dishCrudRepository;
 
@@ -23,13 +23,13 @@ public class DishCRUDController {
     }
 
     @GetMapping("/new-dish")
-    public String createDish(Model model, Dish dish) {
-
+    public String createDish(Model model, @ModelAttribute("dish") Dish dish) {
+        model.addAttribute("dish",dish);
         return "/crud/new-dish";
     }
 
     @PostMapping("/save-dish")
-    public String saveDish(@Valid @ModelAttribute("dish") Dish dish, Errors errors) {
+    public String saveDish( @ModelAttribute("dish") @Valid Dish dish, Errors errors) {
         if (errors.hasErrors()) {
             return "/crud/new-dish";
         } else {
@@ -41,8 +41,8 @@ public class DishCRUDController {
     }
 
 
-    @ModelAttribute("dish")
-    public Dish getDish() {
-        return new Dish();
-    }
+//    @ModelAttribute("dish")
+//    public Dish getDish() {
+//        return new Dish();
+//    }
 }
