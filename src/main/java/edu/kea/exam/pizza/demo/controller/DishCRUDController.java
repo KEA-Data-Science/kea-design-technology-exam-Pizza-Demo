@@ -8,36 +8,45 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.validation.Errors;
+
+
+import javax.validation.Valid;
 
 @Controller
 @SessionAttributes({"dish"})
-public class DishCRUDController
-{
+public class DishCRUDController {
     DishCrudRepository dishCrudRepository;
 
-    public DishCRUDController(DishCrudRepository dishCrudRepository)
-    {
+    public DishCRUDController(DishCrudRepository dishCrudRepository) {
         this.dishCrudRepository = dishCrudRepository;
     }
 
     @GetMapping("/new-dish")
     public String createDish(@ModelAttribute("dish") Dish dish,
-                             Model model)
-    {
-
+                             Errors errors,
+                             Model model) {
 
         return "/crud/new-dish";
     }
 
     @PostMapping("/save-dish")
-    public String saveDish(@ModelAttribute("dish") Dish dish)
-    {
-        dishCrudRepository.save(dish);
-        System.out.println(dish);
-        return "redirect:card";
+    public String saveDish(@Valid @ModelAttribute("dish") Dish dish,
+                           Errors errors,
+                           Model model) {
+        if (errors.hasErrors()) {
+            return "/crud/new-dish";
+        } else {
+
+            dishCrudRepository.save(dish);
+            System.out.println(dish);
+            return "redirect:card";
+        }
     }
 
 
     @ModelAttribute("dish")
-    public Dish getDish(){ return new Dish(); }
+    public Dish getDish() {
+        return new Dish();
+    }
 }
