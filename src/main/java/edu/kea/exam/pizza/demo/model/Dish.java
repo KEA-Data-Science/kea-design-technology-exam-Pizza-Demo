@@ -63,4 +63,12 @@ public class Dish {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public String getToppings() {
+        return toppings;
+    }
+
+    public void setToppings(String toppings) {
+        this.toppings = toppings;
+    }
 }
