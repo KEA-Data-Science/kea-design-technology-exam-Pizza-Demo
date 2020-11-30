@@ -1,6 +1,6 @@
 package edu.kea.exam.pizza.demo.controller;
 
-public class DishCRUDController
+public class PizzaCRUDController
 {
 
 }
