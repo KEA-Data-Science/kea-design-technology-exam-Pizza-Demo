@@ -1,12 +1,15 @@
 package edu.kea.exam.pizza.demo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
 @Entity
 public class Dish {
+
 
     public Dish() {
     }
@@ -18,6 +21,7 @@ public class Dish {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Size(min = 3, max = 45,message = "Beskrivelsen af retten kan være 3-45 tegn lang.")
@@ -70,5 +74,17 @@ public class Dish {
 
     public void setToppings(String toppings) {
         this.toppings = toppings;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Dish{" +
+               "id=" + id +
+               ", description='" + description + '\'' +
+               ", toppings='" + toppings + '\'' +
+               ", type='" + type + '\'' +
+               ", price=" + price +
+               '}';
     }
 }
