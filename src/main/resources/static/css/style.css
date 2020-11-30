@@ -1,0 +1,6 @@
+.container-fluid div:nth-child(even){
+    background-color: burlywood;
+}
+.container-fluid div:nth-child(odd){
+    background-color: lavender;
+}
