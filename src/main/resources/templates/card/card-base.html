@@ -11,13 +11,15 @@
     <title>&#127829; Menukort</title>
 </head>
 <body>
+
 <div class="jumbotron m-5">
+    <div class="col-sm-3">
+        <h3> &#127829; Menukort &#127829; </h3>
+    </div>
     <div class="container">
 
         <div class="row">
-            <div class="col-sm-3">
-                <h3> &#127829; Menukort &#127829; </h3>
-            </div>
+
 
             <div class="col-md-5">
                 <h4>&#127869; Retter</h4>
@@ -54,23 +56,25 @@
                 </div>
                 </div>
 
+            </div>
+            <div class="col-md-3">
                 <h4>&#129380; Drinks</h4>
                 <div class="container-fluid">
-                <div th:each="drink : ${drinks}" class="border">
-                    <table class="table m-2">
-                        <tr>
-                            <td class="font-weight-bolder font-italic" th:text="${drink.getDescription()}"></td>
-                            <th class="numbers" th:text="${drink.getId()}"></th>
-                        </tr>
-                        <tr class="pris">
-                            <td>Pris:</td>
-                            <th th:text="${drink.getPrice()}"></th>
-                        </tr>
-                    </table>
-                </div>
+                    <div th:each="drink : ${drinks}" class="border">
+                        <table class="table m-2">
+                            <tr>
+                                <td class="font-weight-bolder font-italic" th:text="${drink.getDescription()}"></td>
+                                <th class="numbers" th:text="${drink.getId()}"></th>
+                            </tr>
+                            <tr class="pris">
+                                <td>Pris:</td>
+                                <th th:text="${drink.getPrice()}"></th>
+                            </tr>
+                        </table>
+                    </div>
+            </div>
 
-            </div>
-            </div>
+        </div>
 
         </div>
 
