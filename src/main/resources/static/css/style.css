@@ -4,3 +4,12 @@
 .container-fluid div:nth-child(odd){
     background-color: lavender;
 }
+.pris{
+    align-content: end;
+}
+.table-striped{
+    width: 90%;
+}
+.font-weight-bolder{
+    width:40%;
+}
