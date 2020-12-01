@@ -92,3 +92,8 @@ public class Dish {
                '}';
     }
 }
+
+/*
+* Link for getting bean validation to work: https://reflectoring.io/bean-validation-with-spring-boot/
+*
+*  */
