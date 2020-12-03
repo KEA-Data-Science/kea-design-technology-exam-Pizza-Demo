@@ -53,3 +53,18 @@ a:hover{
 .tabcontent{
     display: none;
 }
+
+.tab button{
+    background-color: lightslategrey;
+    border: 1px solid lightgrey;
+    color: white;
+    padding: 15px 32px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.tab button:hover{
+    cursor: pointer;
+}
