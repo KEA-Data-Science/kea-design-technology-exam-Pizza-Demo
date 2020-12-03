@@ -18,10 +18,10 @@
         <div th:if="${param.error}">
             <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
         </div>
-
-        <div th:if="${param.logout}">
-            <p class="text-warning">You have been logged out.</p>
-        </div>
+<!--                                            logout - not implemented -->
+<!--        <div th:if="${param.logout}"> -->
+<!--            <p class="text-warning">Du er nu logget ud.</p>-->
+<!--        </div>-->
 
         <div class="border border-secondary p-3 rounded">
             <p>Adgang til Esmeraldas Bagrum</p>
@@ -30,9 +30,6 @@
             </p>
             <p>
                 <input type="password" name="password" class="form-control" placeholder="Password" required/>
-            </p>
-            <p>
-                <input type="checkbox" name="remember-me"/>&nbsp;Remember Me
             </p>
             <p>
                 <input type="submit" value="Login" class="btn btn-primary"/>
