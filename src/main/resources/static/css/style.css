@@ -37,3 +37,10 @@
     transition: all 0.4s;
     padding: 10px;
 }
+.img-fluid{
+    margin-bottom: 40%;
+}
+.nav-link{
+    color: gold;
+
+}
