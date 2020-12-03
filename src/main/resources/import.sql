@@ -22,6 +22,8 @@ insert into SIDE (id, description, price) values (3, 'Hvidløgs-dressing', 5)
 insert into SIDE (id, description, price) values (4, 'Hvidløgsbrød', 22)
 insert into SIDE (id, description, price) values (5, 'Hvidløgsbrød med ost', 27)
 
+insert into USER (id, username, password) values (1, 'admin', '$2y$12$JJEygwWasJtD6ICwauE.vuDKdQRXBFHf0aNp89LDqiRXhht1omjrq')
+
 
 
 

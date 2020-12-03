@@ -22,7 +22,7 @@ public class DishCRUDController {
         this.dishCrudRepository = dishCrudRepository;
     }
 
-    @GetMapping("/new-dish")
+    @GetMapping("internal/new-dish")
     public String createDish(Model model, @ModelAttribute("dish") Dish dish) {
         model.addAttribute("dish",dish);
         return "/crud/new-dish";
