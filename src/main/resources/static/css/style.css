@@ -1,3 +1,6 @@
+body{
+    background-image: url('/static/pictures/pizza.jpg');
+}
 .container-fluid div:nth-child(even){
     background-color: burlywood;
 }
