@@ -41,10 +41,12 @@
     margin-bottom: 40%;
 }
 .nav-link{
-    color: gold;
+    color: darkgoldenrod;
     font-family: 'Patua One', cursive;
     font-size: 24px;
     line-height: 1.6;
     text-transform: uppercase;
-
+}
+a:hover{
+    color: gold;
 }
