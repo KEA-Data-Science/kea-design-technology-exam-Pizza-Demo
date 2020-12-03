@@ -36,7 +36,7 @@ public class DishCRUDController {
 
             dishCrudRepository.save(dish);
             System.out.println(dish);
-            return "redirect:card";
+            return "Index";
         }
     }
 
