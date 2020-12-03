@@ -10,6 +10,28 @@
 
     <title>&#127829; Menukort</title>
 </head>
+
+<script>
+    function openTab(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}</script>
 <body>
 
 
@@ -36,8 +58,13 @@
             </ul>
             </div>
 
+        <div class="tab" style="margin-left: 40%;">
+            <button class="tablinks" onclick="openTab(Event, 'Retter')">Retter</button>
+            <button class="tablinks" onclick="openTab(Event, 'Ekstra')">Ekstra</button>
+            <button class="tablinks" onclick="openTab(Event, 'Drikkevarer')">Drikkervarer</button>
+        </div>
         <div class="row" style="width: calc(100% - 17rem); margin-left: 17rem;">
-            <div class="col-md-5">
+            <div class="col-md-5 tabcontent" id="Retter">
                 <h4 style="margin-left: 10px;">&#127869; Retter</h4>
                 <div class="container-fluid">
                     <div th:each="dish : ${dishes}" class="border">
@@ -55,7 +82,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 tabcontent" id="Ekstra">
                 <h4>&#129366; Ekstra</h4>
                 <div class="container-fluid">
                 <div th:each="side : ${sides}">
@@ -73,7 +100,7 @@
                 </div>
 
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 tabcontent" id="Drikkevarer">
                 <h4>&#129380; Drinks</h4>
                 <div class="container-fluid">
                     <div th:each="drink : ${drinks}" class="border">
