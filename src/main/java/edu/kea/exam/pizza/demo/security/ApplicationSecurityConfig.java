@@ -36,11 +36,14 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.antMatcher("/**").authorizeRequests().
-                antMatchers("/css/**", "/js/**", "/images/**").permitAll().
-                antMatchers("/", "/card","/sign-up","/sign-up-now").permitAll(). // permits these controller calls for all
+                antMatchers("/css/**", "/js/**", "/pictures/**").permitAll().
+                antMatchers("/", "/card","/sign-up","/sign-up-now","/h2-console/**").permitAll(). // permits these controller calls for all
                 anyRequest().authenticated(). // any other request needs authentication
                 and().formLogin().
                 loginPage("/login").permitAll(); // and will load the login-form
+
+        httpSecurity.csrf().disable();
+        httpSecurity.headers().frameOptions().disable();
     }
 
 }
@@ -48,4 +51,6 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 /*
  * The why of @EnableWebSecurity:
  * https://stackoverflow.com/questions/44671457/what-is-the-use-of-enablewebsecurity-in-spring#44671785
+ * Enabling H2-console:
+ * https://springframework.guru/using-the-h2-database-console-in-spring-boot-with-spring-security/
  * */
