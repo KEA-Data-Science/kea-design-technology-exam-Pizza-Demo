@@ -25,13 +25,13 @@ public class DishCRUDController {
     @GetMapping("internal/new-dish")
     public String createDish(Model model, @ModelAttribute("dish") Dish dish) {
         model.addAttribute("dish",dish);
-        return "/crud/new-dish";
+        return "crud/new-dish";
     }
 
     @PostMapping("/save-dish")
     public String saveDish( @ModelAttribute("dish") @Valid Dish dish, Errors errors) {
         if (errors.hasErrors()) {
-            return "/crud/new-dish";
+            return "crud/new-dish";
         } else {
 
             dishCrudRepository.save(dish);
