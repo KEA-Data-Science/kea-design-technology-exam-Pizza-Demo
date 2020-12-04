@@ -53,9 +53,9 @@ public class CardController {
             @ModelAttribute("drinks") Iterable<Drink> drinks,
             Model model){
 
-        model.addAttribute("dishes",dishes);
-        model.addAttribute("sides",sides);
-        model.addAttribute("drinks",drinks);
+        model.addAttribute("dishes",getDishes());
+        model.addAttribute("sides",getSides());
+        model.addAttribute("drinks",getDrinks());
 
         return "/card/card-base";
     }
