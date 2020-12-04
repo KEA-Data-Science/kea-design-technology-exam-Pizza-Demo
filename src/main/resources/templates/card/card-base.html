@@ -65,13 +65,13 @@
             </div>
 
         <div class="tab" style="margin-left: 20%;">
-            <button class="tablinks" onclick="openTab(Event, 'Retter')">Retter</button>
-            <button class="tablinks" onclick="openTab(Event, 'Ekstra')">Ekstra</button>
-            <button class="tablinks" onclick="openTab(Event, 'Drikkevarer')">Drikkervarer</button><br><br>
+            <button class="tablinks" onclick="openTab(Event, 'Retter')">&#127869; Retter</button>
+            <button class="tablinks" onclick="openTab(Event, 'Ekstra')">&#129366; Ekstra</button>
+            <button class="tablinks" onclick="openTab(Event, 'Drikkevarer')">&#129380; Drinks</button><br><br>
         </div>
         <div class="row" style="width: calc(100% - 17rem); margin-left: 17rem;">
             <div class="col-md-5 tabcontent" id="Retter">
-                <h4 style="margin-left: 10px;">&#127869; Retter</h4>
+
                 <div class="container-fluid">
                     <div th:each="dish : ${dishes}" class="border">
                         <table class="table-striped m-3">
@@ -89,7 +89,7 @@
             </div>
 
             <div class="col-md-3 tabcontent" id="Ekstra">
-                <h4>&#129366; Ekstra</h4>
+
                 <div class="container-fluid">
                 <div th:each="side : ${sides}">
                     <table class="table m-2">
@@ -107,7 +107,7 @@
 
             </div>
             <div class="col-md-3 tabcontent" id="Drikkevarer">
-                <h4>&#129380; Drinks</h4>
+
                 <div class="container-fluid">
                     <div th:each="drink : ${drinks}" class="border">
                         <table class="table m-2">
