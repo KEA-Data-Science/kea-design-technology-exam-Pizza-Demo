@@ -25,6 +25,9 @@ public class UserController {
     public String newSignUpSave(@RequestParam("username") String username,
                                 @RequestParam("password") String password){
 
+        /* introduce tests:
+        * 1. is username unique */
+
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);

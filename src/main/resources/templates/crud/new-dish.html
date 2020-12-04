@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
 
@@ -11,35 +10,46 @@
     <title>Opret Ny Ret :: Esmeralda Pizza</title>
 </head>
 <body>
-<h1>Hole in the wall!</h1>
-<h2>Opret ny pizza</h2>
-<form action="/save-dish" th:action="@{/save-dish}" method="post" th:object="${dish}">
-    <div th:if="${#fields.hasAnyErrors()}">
-        <p style="color: darkred" th:each="err : ${#fields.allErrors()}" th:text="${err}">...</p>
-    </div>
-        <div>
-            <div>
-                <div>Rettens Navn</div>
-                <div><input type="text" name="description" th:field="*{description}"></div>
-            </div>
-            <div>
-                <div>Toppings</div>
-                <div><input type="text" name="toppings" th:field="*{toppings}"></div>
-            </div>
-            <div>
-                <div>Skriv Rettens Type</div>
-                <div><input type="text" name="type" th:field="*{type}"></div>
-            </div>
-            <div>
-                <div>Rettens Pris</div>
-                <div><input type="number" name="price" th:field="*{price}"></div>
+<div class="container justify-content-center">
 
-            </div>
+    <div class="container-fluid mt-5">
+
+        <div class="jumbotron justify-content-center">
             <div>
-                <div><input type="submit"></div>
+            <h2>&#127869; Opret ret nu</h2>
             </div>
+            <form action="/save-dish" th:action="@{/save-dish}" method="post" th:object="${dish}">
+                <div th:if="${#fields.hasAnyErrors()}">
+                    <p style="color: darkred" th:each="err : ${#fields.allErrors()}" th:text="${err}">...</p>
+                </div>
+                <div>
+                    <div>
+                        <div>Rettens Navn</div>
+                        <div><input type="text" name="description" th:field="*{description}"></div>
+                    </div>
+                    <div>
+                        <div>Toppings</div>
+                        <div><input type="text" name="toppings" th:field="*{toppings}"></div>
+                    </div>
+                    <div>
+                        <div>Skriv Rettens Type</div>
+                        <div><input type="text" name="type" th:field="*{type}"></div>
+                    </div>
+                    <div>
+                        <div>Rettens Pris</div>
+                        <div><input type="number" name="price" th:field="*{price}"></div>
+
+                    </div>
+                    <div>
+                        <div><input type="submit" value="Indsend ny ret"></div>
+                    </div>
+                </div>
+
+            </form>
+
         </div>
+    </div>
+</div>
 
-</form>
 </body>
 </html>
