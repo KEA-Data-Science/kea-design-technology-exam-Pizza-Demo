@@ -57,6 +57,6 @@ public class CardController {
         model.addAttribute("sides",getSides());
         model.addAttribute("drinks",getDrinks());
 
-        return "/card/card-base";
+        return "card/card-base";
     }
 }
