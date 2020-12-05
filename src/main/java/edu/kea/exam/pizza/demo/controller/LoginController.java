@@ -26,5 +26,9 @@ public class LoginController {
 //            return mv;
 //        }
 //    }
+    @GetMapping("/admin")
+    public String admin(){
+        return "admin/Admin";
+    }
 
 }
