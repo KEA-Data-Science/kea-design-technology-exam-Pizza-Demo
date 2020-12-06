@@ -1,1 +1,2 @@
 customized text document
+only contains approved characters
