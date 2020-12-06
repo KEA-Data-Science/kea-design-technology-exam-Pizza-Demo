@@ -41,8 +41,4 @@ public class DishCRUDController {
     }
 
 
-//    @ModelAttribute("dish")
-//    public Dish getDish() {
-//        return new Dish();
-//    }
 }
