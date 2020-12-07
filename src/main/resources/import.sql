@@ -1,11 +1,10 @@
-insert into DISH (id, description, price, type) values(1,'MAGAARita',45,'Pizza');
-insert into DISH (id, description, price, type) values(2,'Meat Eater',65,'Pizza');
-insert into DISH (id, description, price, type) values(3,'Vivaldi',55,'Pizza');
-insert into DISH (id, description, price, type) values(4,'Nomadic',60,'Pizza');
-insert into DISH (id, description, price, type) values(5,'Pommes Frittes, Lille',20,'Fast-food');
-insert into DISH (id, description, price, type) values(6,'Pommes Frittes, Medium',25,'Fast-food');
-insert into DISH (id, description, price, type) values(7,'Pommes Frittes, Stor',30,'Fast-food');
-
+insert into DISH (id, description, toppings, price, type) values(1,'MAGARita', 'American BBQ, clean coal og ost.',45,'Pizza');
+insert into DISH (id, description, toppings, price, type) values(2,'Meat Eater', 'Tomatsauce, mozzarella og pepperoni.',65,'Pizza');
+insert into DISH (id, description, toppings, price, type) values(3,'Vivaldi', 'Tomatsauce, mozzarella og pepperoni.',55,'Pizza');
+insert into DISH (id, description, toppings, price, type) values(4,'Nomadic', 'Tomatsauce, mozzarella og pepperoni.',60,'Pizza');
+insert into DISH (id, description, toppings, price, type) values(5,'Pommes Frittes, Lille','-', 20,'Fast-food');
+insert into DISH (id, description, toppings, price, type) values(6,'Pommes Frittes, Medium', '-', 25,'Fast-food');
+insert into DISH (id, description, toppings, price, type) values(7,'Pommes Frittes, Stor', '-',30,'Fast-food');
 
 insert into DRINK (id, description, price) values (1, 'Cola 25cl.',17)
 insert into DRINK (id, description, price) values (2, 'Cola 33cl.',20)

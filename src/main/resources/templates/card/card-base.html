@@ -75,12 +75,17 @@
                     <div th:each="dish : ${dishes}" class="border">
                         <table class="table-striped m-3">
                             <tr style="background: inherit">
-                                <td class="font-weight-bolder font-italic" th:text="${dish.getDescription()}"></td>
-                                <td th:text="'&#127829; ' + ${dish.getType()}"></td>
-                                <th class="numbers" th:text="${dish.getId()}"></th>
+                                <td class="font-weight-bolder font-italic" th:text="${dish.getId()}+ '. ' + ${dish.getDescription()}"></td>
+
+                                <!-- Desværre hardcoded, kan muligvis fixes med en tabel i databasen eller en map -->
+                                <td>
+                                    <span th:if="${dish.getType()} == 'Pizza'" th:text="'&#127829;' + ${dish.getType()}"></span>
+                                    <span th:if="${dish.getType()} == 'Fast-food'" th:text="'🍟' + ${dish.getType()}"></span>
+                                </td>
+                                <th th:text="'Pris: '+${dish.getPrice()}+',-'"></th>
                             </tr>
-                            <tr class="pris">
-                                <th th:text="'Pris: '+${dish.getPrice()}"></th>
+                            <tr>
+                                <td th:text="${dish.getToppings()}"></td>
                             </tr>
                         </table>
                     </div>
