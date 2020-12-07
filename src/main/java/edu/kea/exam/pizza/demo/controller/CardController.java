@@ -1,5 +1,4 @@
 package edu.kea.exam.pizza.demo.controller;
-
 import edu.kea.exam.pizza.demo.model.Dish;
 import edu.kea.exam.pizza.demo.model.Drink;
 import edu.kea.exam.pizza.demo.model.Side;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import java.util.List;
 
 @Controller
 @SessionAttributes({"dishes","sides","drinks"})
@@ -43,8 +41,6 @@ public class CardController {
     public Iterable<Drink> getDrinks(){
         return drinkRepository.findAll();
     }
-
-
 
     @GetMapping("/card")
     public String showCard(
