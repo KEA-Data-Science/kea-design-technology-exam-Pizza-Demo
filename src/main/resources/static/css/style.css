@@ -2,10 +2,10 @@ body{
     background-image: url('/pictures/pizza.jpg');
 }
 .container-fluid div:nth-child(even){
-    background-color: burlywood;
+    background-color: lavender;
 }
 .container-fluid div:nth-child(odd){
-    background-color: lavender;
+    background-color: #BCC4CC
 }
 .numbers{
     float:right;
@@ -55,6 +55,11 @@ a:hover{
 }
 .tabcontent{
     display: none;
+    border-style: outset;
+    border-width: 1px;
+    background-color: lightslategray;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .tab button{
