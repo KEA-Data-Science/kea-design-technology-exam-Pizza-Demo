@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div th:each="dish : ${dishList}" class="border">
+        <table class="table-striped m-3">
+            <tr style="background: inherit">
+                <td class="font-weight-bolder font-italic" th:text="${dish.getDescription()}"></td>
+                <td th:text="'&#127829; ' + ${dish.getType()}"></td>
+                <th class="numbers" th:text="${dish.getId()}"></th>
+            </tr>
+            <tr class="pris">
+                <th th:text="'Pris: '+${dish.getPrice()}"></th>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="container-fluid">
+    <div th:each="side : ${sideList}">
+        <table class="table m-2">
+            <tr>
+                <td class="font-weight-bolder font-italic" th:text="${side.getDescription()}"></td>
+                <th class="numbers" th:text="${side.getId()}"></th>
+            </tr>
+            <tr class="pris">
+                <td>Pris:</td>
+                <th th:text="${side.getPrice()}"></th>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="container-fluid">
+    <div th:each="drink : ${drinkList}" class="border">
+        <table class="table m-2">
+            <tr>
+                <td class="font-weight-bolder font-italic" th:text="${drink.getDescription()}"></td>
+                <th class="numbers" th:text="${drink.getId()}"></th>
+            </tr>
+            <tr class="pris">
+                <td>Pris:</td>
+                <th th:text="${drink.getPrice()}"></th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
