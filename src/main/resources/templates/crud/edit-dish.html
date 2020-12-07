@@ -19,6 +19,9 @@
             </tr>
             <tr class="pris">
                 <th th:text="'Pris: '+${dish.getPrice()}"></th>
+                <a th:href="@{'edit-dish/'+${dish.getId()}}">
+                    <button class="btn-update" id="btn-update">EDIT</button>
+                </a>
             </tr>
         </table>
     </div>
@@ -33,6 +36,9 @@
             <tr class="pris">
                 <td>Pris:</td>
                 <th th:text="${side.getPrice()}"></th>
+                <a th:href="@{'edit-dish/'+${side.getId()}}">
+                    <button class="btn-update">EDIT</button>
+                </a>
             </tr>
         </table>
     </div>
@@ -47,6 +53,9 @@
             <tr class="pris">
                 <td>Pris:</td>
                 <th th:text="${drink.getPrice()}"></th>
+                <a th:href="@{'internal/edit-dish/'+${drink.getId()}}">
+                    <button class="btn-update">EDIT</button>
+                </a>
             </tr>
         </table>
     </div>

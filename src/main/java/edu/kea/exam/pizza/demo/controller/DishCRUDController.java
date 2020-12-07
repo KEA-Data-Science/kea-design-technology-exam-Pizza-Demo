@@ -8,15 +8,13 @@ import edu.kea.exam.pizza.demo.persistence.DrinkCrudRepository;
 import edu.kea.exam.pizza.demo.persistence.SideCrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.Errors;
 
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class DishCRUDController {
@@ -58,6 +56,17 @@ public class DishCRUDController {
         model.addAttribute("drinkList", drinkList);
         model.addAttribute("sideList", sideList);
         return "crud/edit-dish";
+    }
+    @GetMapping("internal/edit-dish/{id}")
+    public String editDishproccess(Model model, @PathVariable("id") int id){
+        Optional<Dish> dish = dishRepository.findById(id);
+        model.addAttribute("dish", dish.get());
+        return "crud/edit-dish-process";
+    }
+    @PostMapping("/edit-dish-done")
+    public String editDishdone(@ModelAttribute Dish dish){
+        dishRepository.save(dish);
+        return "redirect:/admin";
     }
 
 
