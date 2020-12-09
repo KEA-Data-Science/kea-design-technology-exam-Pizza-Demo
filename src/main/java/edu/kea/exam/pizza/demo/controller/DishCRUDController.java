@@ -1,5 +1,4 @@
 package edu.kea.exam.pizza.demo.controller;
-
 import edu.kea.exam.pizza.demo.model.Dish;
 import edu.kea.exam.pizza.demo.model.Drink;
 import edu.kea.exam.pizza.demo.model.Side;
@@ -10,10 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.Errors;
-
-
 import javax.validation.Valid;
-import java.util.List;
 import java.util.Optional;
 
 @Controller
