@@ -32,8 +32,4 @@ class CardControllerTest {
 
     }
 
-    @Test
-    void badTest() throws Exception{
-        assertThat(1).isEqualTo(2);
-    }
 }
