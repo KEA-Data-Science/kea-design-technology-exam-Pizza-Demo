@@ -2,7 +2,7 @@ package edu.kea.exam.pizza.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
+/* The login controller provides access points to the login-template, and Admin page */
 @Controller
 public class LoginController {
 
