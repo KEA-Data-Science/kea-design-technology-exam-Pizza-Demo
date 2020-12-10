@@ -31,4 +31,9 @@ class CardControllerTest {
         assertThat(drinkRepo).isEqualTo(drinkRepo);
 
     }
+
+    @Test
+    void badTest() throws Exception{
+        assertThat(1).isEqualTo(2);
+    }
 }
