@@ -40,7 +40,7 @@ public class DishCRUDController {
 
             dishRepository.save(dish);
             System.out.println(dish);
-            return "Index";
+            return "index";
         }
     }
     @GetMapping("internal/edit-dish")
@@ -64,6 +64,4 @@ public class DishCRUDController {
         dishRepository.save(dish);
         return "redirect:/admin";
     }
-
-
 }
