@@ -11,21 +11,6 @@ public class LoginController {
         return "login/login";
     }
 
-//    @RequestMapping(value = "/processLogin", method = RequestMethod.POST)
-//    public ModelAndView processLogin(@ModelAttribute("login") Login login) {  //Her bliver det proccesset
-//
-//        String userName = login.getUserName();
-//        String password = login.getPassword();
-//
-//        if ("admin".equalsIgnoreCase(userName) //Self explained
-//                && "pizza".equalsIgnoreCase(password)) {
-//            ModelAndView mv = new ModelAndView("admin/Admin"); //Her skal der ændres til den edit siden
-//            return mv;
-//        } else {
-//            ModelAndView mv = new ModelAndView("/login/Login");
-//            return mv;
-//        }
-//    }
     @GetMapping("/admin")
     public String admin(){
         return "admin/Admin";
