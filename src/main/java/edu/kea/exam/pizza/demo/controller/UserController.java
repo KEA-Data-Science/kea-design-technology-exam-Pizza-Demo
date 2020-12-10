@@ -26,7 +26,7 @@ public class UserController {
                                 @RequestParam("password") String password){
 
         /* introduce tests:
-        * 1. is username unique */
+        * 1. is username unique TODO: not implemented yet*/
 
         User user = new User();
         user.setUsername(username);
