@@ -20,9 +20,37 @@ public class CardController {
     SideCrudRepository sideRepository;
     DrinkCrudRepository drinkRepository;
 
+    public CardController() {
+
+    }
+
     public CardController(DishCrudRepository dishRepository, SideCrudRepository sideRepository, DrinkCrudRepository drinkRepository) {
         this.dishRepository = dishRepository;
         this.sideRepository = sideRepository;
+        this.drinkRepository = drinkRepository;
+    }
+
+    public DishCrudRepository getDishRepository() {
+        return dishRepository;
+    }
+
+    public void setDishRepository(DishCrudRepository dishRepository) {
+        this.dishRepository = dishRepository;
+    }
+
+    public SideCrudRepository getSideRepository() {
+        return sideRepository;
+    }
+
+    public void setSideRepository(SideCrudRepository sideRepository) {
+        this.sideRepository = sideRepository;
+    }
+
+    public DrinkCrudRepository getDrinkRepository() {
+        return drinkRepository;
+    }
+
+    public void setDrinkRepository(DrinkCrudRepository drinkRepository) {
         this.drinkRepository = drinkRepository;
     }
 
