@@ -46,11 +46,8 @@ class CardControllerTest {
         drinkRepo = mock(DrinkCrudRepository.class);
         when(drinkRepo.findAll()).thenReturn(new ArrayList<>());
 
-
-        cardController = new CardController();
-        cardController.setSideRepository(sideRepo);
-        cardController.setDishRepository(dishRepo);
-        cardController.setDrinkRepository(drinkRepo);
+        // brugen af parameterløs-konstruktor og setter-metoder ændret til paramteriseret konstruktor-kald.
+        cardController = new CardController(dishRepo,sideRepo,drinkRepo);
 
         mockModel = mock(Model.class);
 
