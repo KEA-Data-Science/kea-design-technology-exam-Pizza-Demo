@@ -29,7 +29,6 @@ class CardControllerTest {
         assertThat(dishRepo).isEqualTo(dishRepo);
         assertThat(sideRepo).isEqualTo(sideRepo);
         assertThat(drinkRepo).isEqualTo(drinkRepo);
-
     }
 
 }
