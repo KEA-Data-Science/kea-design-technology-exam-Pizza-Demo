@@ -58,17 +58,17 @@ class CardControllerTest {
 
     // testcase 1
     @Test
-        void testShowCard() throws Exception{
-        assertEquals("card/card-base", cardController.showCard(mockModel));
+        void testShowCard(){
+        assertEquals("card/card-base", cardController.showCard(new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), mockModel));
 
         verify(sideRepo, times(1)).findAll();
-        verify(mockModel, times(1)).addAttribute("side", new ArrayList<>());
+        verify(mockModel, times(1)).addAttribute("sides", new ArrayList<>());
 
         verify(dishRepo, times(1)).findAll();
-        verify(mockModel, times(1)).addAttribute("dish", new ArrayList<>());
+        verify(mockModel, times(1)).addAttribute("dishes", new ArrayList<>());
 
         verify(drinkRepo, times(1)).findAll();
-        verify(mockModel, times(1)).addAttribute("drink", new ArrayList<>());
+        verify(mockModel, times(1)).addAttribute("drinks", new ArrayList<>());
 
 
     }
