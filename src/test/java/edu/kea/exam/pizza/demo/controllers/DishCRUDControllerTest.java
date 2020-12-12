@@ -52,11 +52,12 @@ class DishCRUDControllerTest {
         drinkRepo = mock(DrinkCrudRepository.class);
         when(drinkRepo.findAll()).thenReturn(new ArrayList<>());
 
-
-        dishCRUDController = new DishCRUDController();
-        dishCRUDController.setSideRepository(sideRepo);
-        dishCRUDController.setDishRepository(dishRepo);
-        dishCRUDController.setDrinkRepository(drinkRepo);
+        dishCRUDController = new DishCRUDController(dishRepo,sideRepo,drinkRepo);
+        /* Kian: linien over erstatter de fire nedenstående - for at undgå brugen af en ikke-eksisterende paramterløs constructor. */
+//        dishCRUDController = new DishCRUDController();
+//        dishCRUDController.setSideRepository(sideRepo);
+//        dishCRUDController.setDishRepository(dishRepo);
+//        dishCRUDController.setDrinkRepository(drinkRepo);
 
         mockModel = mock(Model.class);
 

@@ -19,8 +19,8 @@ public class DishCRUDController {
     SideCrudRepository sideRepository;
     DrinkCrudRepository drinkRepository;
 
-    public DishCRUDController() {
-    }
+//    public DishCRUDController() {
+//    }
 
 
     public DishCRUDController(DishCrudRepository dishRepository, SideCrudRepository sideRepository, DrinkCrudRepository drinkRepository) {
