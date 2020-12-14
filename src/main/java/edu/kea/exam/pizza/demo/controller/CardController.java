@@ -26,7 +26,7 @@ public class CardController {
     SideCrudRepository sideRepository;
     DrinkCrudRepository drinkRepository;
 
-    /* Constructoren uden parametre forhindrer Spring Frameworket i ordenligt at initializere data, så den er slettet */
+    /* Constructoren uden parametre forhindrer Spring Frameworket i ordenligt at initializere data, så den er slettet*/
 
     public CardController(DishCrudRepository dishRepository, SideCrudRepository sideRepository, DrinkCrudRepository drinkRepository) {
         this.dishRepository = dishRepository;
