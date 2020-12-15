@@ -1,3 +1,6 @@
 customized text document
 only contains approved characters
 in sensible quantities
+
+## Nyttig kilde:
+## https://www.codejava.net/frameworks/spring-boot/spring-boot-spring-data-jpa-mysql-example#Properties
