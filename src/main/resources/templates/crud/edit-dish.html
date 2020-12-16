@@ -10,6 +10,7 @@
 <body>
 
 <div class="container-fluid">
+    <h3>DISHES</h3>
     <div th:each="dish : ${dishList}" class="border">
         <table class="table-striped m-3">
             <tr style="background: inherit">
@@ -18,8 +19,8 @@
                 <th class="numbers" th:text="${dish.getId()}"></th>
             </tr>
             <tr class="pris">
-                <th th:text="'Pris: '+${dish.getPrice()}"></th>
-                <a th:href="@{'edit-dish/'+${dish.getId()}}">
+                <th th:text="'Pris: '+${dish.getPrice()}" class="pris"></th>
+                <a th:href="@{'edit-dish/'+${dish.getId()}}" style="float: right;">
                     <button class="btn-update" id="btn-update">EDIT</button>
                 </a>
             </tr>
@@ -27,6 +28,7 @@
     </div>
 </div>
 <div class="container-fluid">
+    <h3>SIDES</h3>
     <div th:each="side : ${sideList}">
         <table class="table m-2">
             <tr>
@@ -36,7 +38,7 @@
             <tr class="pris">
                 <td>Pris:</td>
                 <th th:text="${side.getPrice()}"></th>
-                <a th:href="@{'edit-dish/'+${side.getId()}}">
+                <a th:href="@{'edit-dish/'+${side.getId()}}" style="float: right;">
                     <button class="btn-update">EDIT</button>
                 </a>
             </tr>
