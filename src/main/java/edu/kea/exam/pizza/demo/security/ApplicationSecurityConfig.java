@@ -38,7 +38,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.antMatcher("/**").authorizeRequests().
                 antMatchers("/css/**", "/js/**", "/pictures/**").permitAll().
-                antMatchers("/", "/card","/sign-up","/sign-up-now","/h2-console/**").permitAll(). // permits these controller calls for all
+                antMatchers("/", "/card","/sign-up","/sign-up-now","/h2-console/**", "/InfoSites/**").permitAll(). // permits these controller calls for all
                 anyRequest().authenticated(). // any other request needs authentication
                 and().formLogin().
                 loginPage("/login").permitAll(); // and will load the login-form
