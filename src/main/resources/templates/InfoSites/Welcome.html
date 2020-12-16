@@ -9,8 +9,8 @@
 
     <title>ESMARALDA PIZZA</title>
 </head>
-<body>
-
+<body onload = "startTimer()">
+<img id="img" src="/pictures/pizza.jpg" style="margin-left: 14%; width: 1300px; height: 1000px"/>
 
 <div >
 
@@ -39,11 +39,39 @@
         </div>
     </div>
 </div>
-
-<div style="margin-left: 20%;">
-    <h1>udfyld noget her</h1>
-
+<div style="position: absolute; top: 0; right: 95px;">
+    <button class="tab" type="button" style="width: 100px" onclick="displayPreviousImage()">Forrige</button>
+    <br>
+    <button class="tab" type="button" style="width: 100px" onclick="displayNextImage()">Næste</button>
 </div>
 
+
 </body>
+
+
+
+
+<script type = "text/javascript">
+    function displayNextImage() {
+        x = (x === images.length - 1) ? 0 : x + 1;
+        document.getElementById("img").src = images[x];
+    }
+
+    function displayPreviousImage() {
+        x = (x <= 0) ? images.length - 1 : x - 1;
+        document.getElementById("img").src = images[x];
+    }
+
+    function startTimer() {
+        setInterval(displayNextImage, 5000);
+    }
+
+    var images = [], x = -1;
+    images[0] = "/pictures/pizza2.jpg";
+    images[1] = "/pictures/pizza3.jpg";
+    images[2] = "/pictures/pizza4.jpg";
+
+</script>
+
+
 </html>
