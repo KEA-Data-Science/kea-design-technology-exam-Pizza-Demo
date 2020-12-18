@@ -28,6 +28,6 @@ void setUp(){
 
     @Test
     void testAdmin(){
-        assertEquals("admin/Admin", loginController.admin());
+        assertEquals("admin/admin", loginController.admin());
     }
 }
