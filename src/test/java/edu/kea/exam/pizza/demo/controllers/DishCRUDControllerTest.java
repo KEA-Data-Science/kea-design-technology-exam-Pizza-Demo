@@ -1,5 +1,6 @@
 package edu.kea.exam.pizza.demo.controllers;
 import edu.kea.exam.pizza.demo.controller.DishCRUDController;
+import edu.kea.exam.pizza.demo.model.Dish;
 import edu.kea.exam.pizza.demo.persistence.DishCrudRepository;
 import edu.kea.exam.pizza.demo.persistence.DrinkCrudRepository;
 import edu.kea.exam.pizza.demo.persistence.SideCrudRepository;
@@ -10,7 +11,12 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.ui.Model;
-import static org.mockito.Mockito.mock;
+
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.times;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -39,6 +45,7 @@ class DishCRUDControllerTest {
         sideRepo = mock(SideCrudRepository.class);
 
         dishRepo = mock(DishCrudRepository.class);
+        when(dishRepo.findAll()).thenReturn(new ArrayList<>());
 
         drinkRepo = mock(DrinkCrudRepository.class);
 
@@ -48,10 +55,15 @@ class DishCRUDControllerTest {
 
     }
 
+
+
     // testcase 1
     @Test
     void testCreateDish() throws Exception{
-
+        //fake test
+        ArrayList<Dish> results = new ArrayList<>();
+        results.add(new Dish());
+        assertEquals(results.size(), 1 );
     }
 
     @Test
