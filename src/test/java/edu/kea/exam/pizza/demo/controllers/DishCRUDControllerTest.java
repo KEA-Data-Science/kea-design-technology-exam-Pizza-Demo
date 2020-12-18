@@ -11,9 +11,9 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
@@ -37,6 +37,12 @@ class DishCRUDControllerTest {
     @Mock
     Model mockModel;
 
+    @Mock
+    Dish testDish;
+
+    @Mock
+    Errors testError;
+
     DishCRUDController dishCRUDController;
 
 
@@ -47,6 +53,8 @@ class DishCRUDControllerTest {
         dishRepo = mock(DishCrudRepository.class);
         when(dishRepo.findAll()).thenReturn(new ArrayList<>());
 
+        when(dishRepo.findById(1)).thenReturn(java.util.Optional.of(testDish));
+
         drinkRepo = mock(DrinkCrudRepository.class);
 
         dishCRUDController = new DishCRUDController(dishRepo,sideRepo,drinkRepo);
@@ -55,33 +63,32 @@ class DishCRUDControllerTest {
 
     }
 
-
-
     // testcase 1
     @Test
     void testCreateDish() throws Exception{
-        //fake test
-        ArrayList<Dish> results = new ArrayList<>();
-        results.add(new Dish());
-        assertEquals(results.size(), 1 );
+        assertEquals("crud/new-dish",dishCRUDController.createDish(mockModel, testDish));
+
+        //verify(dishRepo,times(1)).save(testDish);
     }
 
     @Test
     void testSaveDish() throws Exception {
+        assertEquals("index",dishCRUDController.saveDish(testDish, testError));
     }
 
     @Test
     void testEditDish() throws Exception {
+        assertEquals("crud/edit-dish",dishCRUDController.editDish(mockModel));
     }
 
     @Test
     void testEditDishproccess() throws Exception {
+        assertEquals("crud/edit-dish-process",dishCRUDController.editDishproccess(mockModel, 1));
     }
 
     @Test
     void testEditDishdone() throws Exception {
+        assertEquals("redirect:/admin",dishCRUDController.editDishdone(testDish));
+
     }
 }
-
-
-
