@@ -8,7 +8,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<div class="jumbotron-fluid">
 <div class="container-fluid">
     <h3>DISHES</h3>
     <div th:each="dish : ${dishList}" class="border">
@@ -20,8 +20,13 @@
             </tr>
             <tr class="pris">
                 <th th:text="'Pris: '+${dish.getPrice()}" class="pris"></th>
+                <!--- Update knap bliver tilføjet her --->
                 <a th:href="@{'edit-dish/'+${dish.getId()}}" style="float: right;">
                     <button class="btn-update" id="btn-update">EDIT</button>
+                </a>
+                <!--- Delete knap bliver tilføjet her --->
+                <a th:href="@{'delete-dish/'+${dish.getId()}}" style="float: right;">
+                    <button class="btn-update" id="btn-delete">DELETE</button>
                 </a>
             </tr>
         </table>
@@ -41,6 +46,9 @@
                 <a th:href="@{'edit-dish/'+${side.getId()}}" style="float: right;">
                     <button class="btn-update">EDIT</button>
                 </a>
+                <a th:href="@{'delete-dish/'+${side.getId()}}" style="float: right;">
+                    <button class="btn-update">DELETE</button>
+                </a>
             </tr>
         </table>
     </div>
@@ -58,10 +66,13 @@
                 <a th:href="@{'internal/edit-dish/'+${drink.getId()}}">
                     <button class="btn-update">EDIT</button>
                 </a>
+                <a th:href="@{'delete-dish/'+${drink.getId()}}" style="float: right;">
+                    <button class="btn-update">DELETE</button>
+                </a>
             </tr>
         </table>
     </div>
 </div>
-
+</div>
 </body>
 </html>

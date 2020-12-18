@@ -65,4 +65,10 @@ public class DishCRUDController {
         dishRepository.save(dish);
         return "redirect:/admin";
     }
+
+    @GetMapping("internal/delete-dish/{id}")
+    public String deleteDish(Model model, @PathVariable("id") int id){
+        dishRepository.deleteById(id);
+        return "redirect:/admin";
+    }
 }
