@@ -81,7 +81,7 @@ class DishCRUDControllerTest {
     @Test
     void testEditDish() throws Exception {
         assertEquals("crud/edit-dish",dishCRUDController.editDish(mockModel));
-        
+
     }
 
     // testcase 4
