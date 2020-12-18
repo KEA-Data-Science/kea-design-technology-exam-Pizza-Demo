@@ -8,7 +8,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="jumbotron-fluid">
+<div class="row">
+<div class="jumbotron w-50 mx-auto">
 <div class="container-fluid">
     <h3>DISHES</h3>
     <div th:each="dish : ${dishList}" class="border">
@@ -35,7 +36,7 @@
 <div class="container-fluid">
     <h3>SIDES</h3>
     <div th:each="side : ${sideList}">
-        <table class="table m-2">
+        <table class="table m-3">
             <tr>
                 <td class="font-weight-bolder font-italic" th:text="${side.getDescription()}"></td>
                 <th class="numbers" th:text="${side.getId()}"></th>
@@ -43,10 +44,10 @@
             <tr class="pris">
                 <td>Pris:</td>
                 <th th:text="${side.getPrice()}"></th>
-                <a th:href="@{'edit-dish/'+${side.getId()}}" style="float: right;">
+                <a th:href="@{'edit-side/'+${side.getId()}}" style="float: right;">
                     <button class="btn-update">EDIT</button>
                 </a>
-                <a th:href="@{'delete-dish/'+${side.getId()}}" style="float: right;">
+                <a th:href="@{'delete-side/'+${side.getId()}}" style="float: right;">
                     <button class="btn-update">DELETE</button>
                 </a>
             </tr>
@@ -54,8 +55,9 @@
     </div>
 </div>
 <div class="container-fluid">
+    <h3>DRINKS</h3>
     <div th:each="drink : ${drinkList}" class="border">
-        <table class="table m-2">
+        <table class="table m-3">
             <tr>
                 <td class="font-weight-bolder font-italic" th:text="${drink.getDescription()}"></td>
                 <th class="numbers" th:text="${drink.getId()}"></th>
@@ -63,15 +65,16 @@
             <tr class="pris">
                 <td>Pris:</td>
                 <th th:text="${drink.getPrice()}"></th>
-                <a th:href="@{'internal/edit-dish/'+${drink.getId()}}">
+                <a th:href="@{'edit-drink/'+${drink.getId()}}" style="float: right;">
                     <button class="btn-update">EDIT</button>
                 </a>
-                <a th:href="@{'delete-dish/'+${drink.getId()}}" style="float: right;">
+                <a th:href="@{'delete-drink/'+${drink.getId()}}" style="float: right;">
                     <button class="btn-update">DELETE</button>
                 </a>
             </tr>
         </table>
     </div>
+</div>
 </div>
 </div>
 </body>

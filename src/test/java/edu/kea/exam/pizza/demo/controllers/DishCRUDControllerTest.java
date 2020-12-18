@@ -87,13 +87,13 @@ class DishCRUDControllerTest {
     // testcase 4
     @Test
     void testEditDishproccess() throws Exception {
-        assertEquals("crud/edit-dish-process",dishCRUDController.editDishproccess(mockModel, 1));
+        assertEquals("crud/edit-dish-process",dishCRUDController.editDishProcess(mockModel, 1));
     }
 
     // testcase 5
     @Test
     void testEditDishdone() throws Exception {
-        assertEquals("redirect:/admin",dishCRUDController.editDishdone(testDish));
+        assertEquals("redirect:/admin",dishCRUDController.editDishDone(testDish));
         verify(dishRepo,times(1)).save(testDish);
     }
 }

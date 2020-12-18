@@ -1,6 +1,8 @@
 package edu.kea.exam.pizza.demo.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
 
@@ -15,7 +17,8 @@ public class Side {
     }
 
     @Id
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Size(min = 3, max = 45, message="Beskrivelsen af ekstra-retten kan være mellem 3 - 45 tegn.")
     private String description;

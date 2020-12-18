@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+    <title>Opret Ny Drink :: Esmeralda Pizza</title>
+</head>
+<body>
+            <div class="container justify-content-center">
+
+                <div class="container-fluid mt-5">
+
+                    <div class="jumbotron justify-content-center">
+                        <div>
+                            <h2>&#127869; Opret drikkevare nu</h2>
+                        </div>
+                        <form action="/internal/save-drink" method="post" th:object="${drink}">
+                            <div th:if="${#fields.hasAnyErrors()}">
+                                <p style="color: darkred" th:each="err : ${#fields.allErrors()}" th:text="${err}">
+                                    ...</p>
+                            </div>
+                            <div>
+                                <div>
+                                    <div>Drikkevarens Navn</div>
+                                    <div><input type="text" name="description" th:field="*{description}"></div>
+                                </div>
+                                <div>
+                                    <div>Drikkevarens Pris</div>
+                                    <div><input type="number" name="price" th:field="*{price}"></div>
+
+                                </div>
+                                <div>
+                                    <div><input type="submit" value="Indsend ny drikkevare"></div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

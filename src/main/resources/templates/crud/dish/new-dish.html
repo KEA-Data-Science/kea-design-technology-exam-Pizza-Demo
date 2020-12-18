@@ -18,7 +18,7 @@
             <div>
             <h2>&#127869; Opret ret nu</h2>
             </div>
-            <form action="/save-dish" th:action="@{/save-dish}" method="post" th:object="${dish}">
+            <form action="save-dish" method="post" th:object="${dish}">
                 <div th:if="${#fields.hasAnyErrors()}">
                     <p style="color: darkred" th:each="err : ${#fields.allErrors()}" th:text="${err}">...</p>
                 </div>

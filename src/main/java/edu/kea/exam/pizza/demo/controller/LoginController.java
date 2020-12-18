@@ -13,7 +13,7 @@ public class LoginController {
 
     @GetMapping("/admin")
     public String admin(){
-        return "admin/Admin";
+        return "admin/admin";
     }
 
 }

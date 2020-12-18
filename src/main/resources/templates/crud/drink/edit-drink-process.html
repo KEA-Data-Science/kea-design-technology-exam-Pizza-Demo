@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rediger Drink :: Esmeralda Pizza</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Redigér Drikkevare :: Esmeralda Pizza</title>
+</head>
+<body>
+<div class="container justify-content-center">
+
+    <div class="container-fluid mt-5">
+
+        <div class="jumbotron justify-content-center">
+            <div>
+                <h2>&#127869; Rediger drikkevare nu</h2>
+            </div>
+            <form action="/edit-drink-done" th:object="${drink}" method="post">
+                <br>
+                <label>ID</label>
+                <br>
+                <input readonly name="id" th:value="${drink.id}">
+                <br><br>
+                <label>DESCRIPTION</label>
+                <br>
+                <input type="text" name="description" th:value="${drink.description}">
+                <br><br>
+                <br>
+                <label>PRICE</label>
+                <br>
+                <input type="number" name="price" th:value="${drink.price}">
+                <br><br>
+                <input type="submit" value="SAVE CHANGES">
+                <br><br>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

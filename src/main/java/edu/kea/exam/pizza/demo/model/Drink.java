@@ -1,11 +1,16 @@
 package edu.kea.exam.pizza.demo.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
 @Entity
+@Component
 public class Drink {
 
     public Drink() {
@@ -18,6 +23,7 @@ public class Drink {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Size(min = 3, max = 45, message = "Beskrivelsen af drinken kan være 3-45 tegn lang.")
