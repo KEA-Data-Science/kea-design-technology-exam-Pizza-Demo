@@ -68,27 +68,32 @@ class DishCRUDControllerTest {
     void testCreateDish() throws Exception{
         assertEquals("crud/new-dish",dishCRUDController.createDish(mockModel, testDish));
 
-        //verify(dishRepo,times(1)).save(testDish);
     }
 
+    // testcase 2
     @Test
     void testSaveDish() throws Exception {
         assertEquals("index",dishCRUDController.saveDish(testDish, testError));
+        verify(dishRepo,times(1)).save(testDish);
     }
 
+    // testcase 3
     @Test
     void testEditDish() throws Exception {
         assertEquals("crud/edit-dish",dishCRUDController.editDish(mockModel));
+        
     }
 
+    // testcase 4
     @Test
     void testEditDishproccess() throws Exception {
         assertEquals("crud/edit-dish-process",dishCRUDController.editDishproccess(mockModel, 1));
     }
 
+    // testcase 5
     @Test
     void testEditDishdone() throws Exception {
         assertEquals("redirect:/admin",dishCRUDController.editDishdone(testDish));
-
+        verify(dishRepo,times(1)).save(testDish);
     }
 }
