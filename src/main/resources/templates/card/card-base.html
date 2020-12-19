@@ -100,12 +100,10 @@
                 <div th:each="side : ${sides}">
                     <table class="table m-2">
                     <tr>
-                        <td class="font-weight-bolder font-italic" th:text="${side.getDescription()}"></td>
-                        <th class="numbers" th:text="${side.getId()}"></th>
+                        <td class="font-weight-bolder font-italic" th:text="${side.getId()}+ '. ' + ${side.getDescription()}"></td>
                     </tr>
                     <tr class="pris">
-                        <td>Pris:</td>
-                        <th th:text="${side.getPrice()}"></th>
+                        <th style="float: right;" th:text="' Pris: '+${side.getPrice()}+'.-'"></th>
                     </tr>
                     </table>
                 </div>
@@ -118,12 +116,10 @@
                     <div th:each="drink : ${drinks}" class="border">
                         <table class="table m-2">
                             <tr>
-                                <td class="font-weight-bolder font-italic" th:text="${drink.getDescription()}"></td>
-                                <th class="numbers" th:text="${drink.getId()}"></th>
+                                <td class="font-weight-bolder font-italic" th:text="${drink.getId()}+ '. ' + ${drink.getDescription()}"></td>
                             </tr>
                             <tr class="pris">
-                                <td>Pris:</td>
-                                <th th:text="${drink.getPrice()}"></th>
+                                <th style="float: right;" th:text="' Pris: '+${drink.getPrice()}+'.-'"></th>
                             </tr>
                         </table>
                     </div>
