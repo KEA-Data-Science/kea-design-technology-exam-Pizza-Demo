@@ -15,9 +15,8 @@
     <div th:each="dish : ${dishList}" class="border">
         <table class="table-striped m-3">
             <tr style="background: inherit">
-                <td class="font-weight-bolder font-italic" th:text="${dish.getDescription()}"></td>
-                <td th:text="'&#127829; ' + ${dish.getType()}"></td>
-                <th class="numbers" th:text="${dish.getId()}"></th>
+                <td class="numbers" th:text="'Nr. ' +${dish.getMenuNumber()}"></td>
+                <th class="font-weight-bolder font-italic" th:text="${dish.getDescription()}"></th>
             </tr>
             <tr class="pris">
                 <th th:text="'Pris: '+${dish.getPrice()}" class="pris"></th>
@@ -33,17 +32,17 @@
         </table>
     </div>
 </div>
+    <br>
 <div class="container-fluid">
     <h3>SIDES</h3>
-    <div th:each="side : ${sideList}">
-        <table class="table m-3">
-            <tr>
-                <td class="font-weight-bolder font-italic" th:text="${side.getDescription()}"></td>
-                <th class="numbers" th:text="${side.getId()}"></th>
+    <div th:each="side : ${sideList}" class="border">
+        <table class="table-striped m-3">
+            <tr style="background: inherit">
+                <td class="numbers" th:text="'Nr. ' + ${side.getId()}"></td>
+                <th class="font-weight-bolder font-italic" th:text="${side.getDescription()}"></th>
             </tr>
             <tr class="pris">
-                <td>Pris:</td>
-                <th th:text="${side.getPrice()}"></th>
+                <th th:text="'Pris: '+${side.getPrice()}";></th>
                 <a th:href="@{'edit-side/'+${side.getId()}}" style="float: right;">
                     <button class="btn-update">EDIT</button>
                 </a>
@@ -54,17 +53,18 @@
         </table>
     </div>
 </div>
+    <br>
 <div class="container-fluid">
     <h3>DRINKS</h3>
     <div th:each="drink : ${drinkList}" class="border">
-        <table class="table m-3">
-            <tr>
-                <td class="font-weight-bolder font-italic" th:text="${drink.getDescription()}"></td>
-                <th class="numbers" th:text="${drink.getId()}"></th>
+        <table class="table-striped m-3">
+            <tr style="background: inherit">
+                <td class="numbers" th:text="'Nr. ' +${drink.getId()}"></td>
+                <th class="font-weight-bolder font-italic" th:text="${drink.getDescription()}"></th>
+
             </tr>
             <tr class="pris">
-                <td>Pris:</td>
-                <th th:text="${drink.getPrice()}"></th>
+                <th th:text="'Pris: '+${drink.getPrice()}"></th>
                 <a th:href="@{'edit-drink/'+${drink.getId()}}" style="float: right;">
                     <button class="btn-update">EDIT</button>
                 </a>
