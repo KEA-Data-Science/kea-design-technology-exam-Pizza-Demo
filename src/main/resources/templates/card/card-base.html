@@ -76,7 +76,7 @@
                     <div th:each="dish : ${dishes}" class="border">
                         <table class="table-striped m-3">
                             <tr style="background: inherit">
-                                <td class="font-weight-bolder font-italic" th:text="${dish.getId()}+ '. ' + ${dish.getDescription()}"></td>
+                                <td class="font-weight-bolder font-italic" th:text="${dish.getMenuNumber()}+ '. ' + ${dish.getDescription()}"></td>
 
                                 <!-- Desværre hardcoded, kan muligvis fixes med en tabel i databasen eller en map -->
                                 <td>

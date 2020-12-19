@@ -1,5 +1,6 @@
 package edu.kea.exam.pizza.demo.model;
 
+import org.hibernate.annotations.AccessType;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.Entity;
@@ -28,6 +29,9 @@ public class Dish {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Size(min = 1, max = 10, message = "Menuens nummer skal være mellem 1-10 karaktere, tallet 0 betyder inaktiv")
+    private String menuNumber;
+
     @Size(min = 3, max = 45, message = "Beskrivelsen af retten kan være 3-45 tegn lang.")
     private String description;
 
@@ -44,13 +48,13 @@ public class Dish {
         this.id = id;
     }
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() { return description; }
+
+    public String getMenuNumber() { return menuNumber; }
+
+    public void setMenuNumber(String menuNumber) { this.menuNumber = menuNumber; }
 
     public void setDescription(String description) {
         this.description = description;
@@ -81,19 +85,18 @@ public class Dish {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "Dish{" +
-               "id=" + id +
-               ", description='" + description + '\'' +
-               ", toppings='" + toppings + '\'' +
-               ", type='" + type + '\'' +
-               ", price=" + price +
-               '}';
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", toppings='" + toppings + '\'' +
+                ", type='" + type + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
 
 /*
-* Link for getting bean validation to work: https://reflectoring.io/bean-validation-with-spring-boot/
-*
-*  */
+ * Link for getting bean validation to work: https://reflectoring.io/bean-validation-with-spring-boot/
+ *
+ *  */
