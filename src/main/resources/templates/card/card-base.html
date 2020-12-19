@@ -83,7 +83,8 @@
                                     <span th:if="${dish.getType()} == 'Pizza'" th:text="'&#127829;' + ${dish.getType()}"></span>
                                     <span th:if="${dish.getType()} == 'Fast-food'" th:text="'🍟' + ${dish.getType()}"></span>
                                 </td>
-                                <th th:text="'Pris: '+${dish.getPrice()}+',-'"></th>
+
+                                <th style="float: right;" th:text="'Pris: '+${dish.getPrice()}+',-'"></th>
                             </tr>
                             <tr>
                                 <td th:text="${dish.getToppings()}"></td>
