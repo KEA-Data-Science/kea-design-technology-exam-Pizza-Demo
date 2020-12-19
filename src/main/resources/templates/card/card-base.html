@@ -94,15 +94,13 @@
                 </div>
             </div>
 
-            <div class="col-md-3 tabcontent" id="Ekstra">
+            <div class="col-md-5 tabcontent" id="Ekstra">
 
                 <div class="container-fluid">
-                <div th:each="side : ${sides}">
+                <div th:each="side : ${sides}" class="border">
                     <table class="table m-2">
                     <tr>
-                        <td class="font-weight-bolder font-italic" th:text="${side.getId()}+ '. ' + ${side.getDescription()}"></td>
-                    </tr>
-                    <tr class="pris">
+                        <td class="font-weight-bolder font-italic" th:text="${side.getDescription()}"></td>
                         <th style="float: right;" th:text="' Pris: '+${side.getPrice()}+'.-'"></th>
                     </tr>
                     </table>
@@ -110,15 +108,13 @@
                 </div>
 
             </div>
-            <div class="col-md-3 tabcontent" id="Drikkevarer">
+            <div class="col-md-5 tabcontent" id="Drikkevarer">
 
                 <div class="container-fluid">
                     <div th:each="drink : ${drinks}" class="border">
                         <table class="table m-2">
                             <tr>
-                                <td class="font-weight-bolder font-italic" th:text="${drink.getId()}+ '. ' + ${drink.getDescription()}"></td>
-                            </tr>
-                            <tr class="pris">
+                                <td class="font-weight-bolder font-italic" th:text="${drink.getDescription()}"></td>
                                 <th style="float: right;" th:text="' Pris: '+${drink.getPrice()}+'.-'"></th>
                             </tr>
                         </table>
