@@ -77,3 +77,13 @@ a:hover{
 .tab button:hover{
     cursor: pointer;
 }
+.formular input{
+    width: 200px;
+}
+.formular submit:hover{
+    cursor: pointer;
+}
+.formular2 input{
+    width: 200px;
+    height: 100px;
+}
