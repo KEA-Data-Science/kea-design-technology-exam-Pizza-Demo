@@ -14,7 +14,7 @@ import org.springframework.validation.Errors;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Optional;
-
+/* Controller class implements CRUD functionality for dishes, sides and drinks */
 @Controller
 public class DishCRUDController {
 
