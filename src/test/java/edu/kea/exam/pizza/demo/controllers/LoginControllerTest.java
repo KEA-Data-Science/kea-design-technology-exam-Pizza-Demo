@@ -23,7 +23,7 @@ void setUp(){
 }
     @Test
     void testGetLoginPage(){
-        assertEquals("login/login", loginController.getLoginPage());
+        assertEquals("login/asdaw", loginController.getLoginPage());
     }
 
     @Test
